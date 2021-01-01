@@ -43,7 +43,9 @@ public class CICD_Project
   }
 
   @AfterTest
-  public void afterTest() {
+  public void afterTest() 
+  {
+	  driver.quit();
   }
 
 }
