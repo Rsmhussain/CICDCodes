@@ -26,8 +26,19 @@ public class CICD_Project
 	  driver.findElement(By.id("Password")).sendKeys("Rvt@1234567");;
 	  WebElement login=driver.findElement(By.xpath("//*[@id='frmLogin']/fieldset/div[2]/button/span"));
 	  login.click();
+	  System.out.println("Sheik loged In");
   }
   
+  @Test
+  public void loginValidInvalidCredentials() 
+  {
+	  WebElement username=driver.findElement(By.id("Username"));
+	  username.sendKeys("smhussain.r");
+	  driver.findElement(By.id("Password")).sendKeys("Rvt@123");;
+	  WebElement login=driver.findElement(By.xpath("//*[@id='frmLogin']/fieldset/div[2]/button/span"));
+	  login.click();
+	  System.out.println("Invalid User Name and Password");
+  }
   @BeforeTest
   public void beforeTest() 
   {
