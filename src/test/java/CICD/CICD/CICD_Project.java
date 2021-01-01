@@ -15,10 +15,17 @@ import org.openqa.selenium.WebElement;
 
 public class CICD_Project
 {
+  //Gobal Declaration
+  WebDriver driver;
+  
   @Test
-  public void f() 
+  public void loginValidCredentials() 
   {
-	  
+	  WebElement username=driver.findElement(By.id("Username"));
+	  username.sendKeys("smhussain.r");
+	  driver.findElement(By.id("Password")).sendKeys("Rvt@1234567");;
+	  WebElement login=driver.findElement(By.xpath("//*[@id='frmLogin']/fieldset/div[2]/button/span"));
+	  login.click();
   }
   
   @BeforeTest
